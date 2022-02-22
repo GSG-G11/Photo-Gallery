@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Slab');
-
 * {
   position: relative;
   margin: 0;
@@ -22,13 +20,13 @@ h1 {
 }
 
 h2 {
-    margin-bottom: 50px;
-  }
+  margin-bottom: 50px;
+}
 
 .message {
   display: inline-block;
   line-height: 1.2;
-  transition: line-height .2s, width .2s;
+  transition: line-height 0.2s, width 0.2s;
   overflow: hidden;
 }
 
@@ -39,17 +37,17 @@ h2 {
 }
 
 .hidden {
-  color: #FFF;
+  color: #fff;
 }
 
 .btn-transition {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .transition {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 15px 32px;
