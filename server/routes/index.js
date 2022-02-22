@@ -8,9 +8,8 @@ const {
 } = require('../controllers');
 
 router.get('/', handleHomePage);
+router.get('/about', handleAboutPage);
 router.use(pageNotFound);
 router.use(serverError);
-
-router.get('/about', handleAboutPage);
 
 module.exports = router;
