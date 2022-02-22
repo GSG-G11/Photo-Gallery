@@ -4,9 +4,9 @@
   "description": "Search For Photos of anything you want",
   "main": "index.js",
   "scripts": {
-    "start": "node server/app.js",
-    "dev": "nodemon server/app.js",
-    "test": "jest"
+    "start": "node ./server/",
+    "dev": "nodemon ./server/",
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "env2": "^2.2.2",
     "express": "^4.17.3",
     "helmet": "^5.0.2",
-    "node-fetch": "^3.2.0"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.12.1",
