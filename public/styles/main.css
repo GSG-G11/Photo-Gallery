@@ -1,3 +1,48 @@
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+
+.welcome-title {
+    color: #333;
+    font-size: 40px;
+}
+
+
+.section-about-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    padding: 50px;
+    width: 50%;
+    font-size: 40px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+  }
+
+  .btn-transition {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .transition {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 /* global */
 * {
   padding: 0;
@@ -71,6 +116,22 @@ form input {
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;
+  }
+  .welcome-title {
+    font-size: 1.8rem;
+  }
+  .section-about-us {
+    padding: 0;
+  }
+  .description {
+    padding: 100px;
+    width: 100%;
+    font-size: 40px;
+  }
+  .transition {
+      font-size: 30px;
+      width: 300px;
+      height: 100px;
   }
 }
 
