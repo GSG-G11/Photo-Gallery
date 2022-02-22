@@ -1,0 +1,88 @@
+/* global */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+@media (min-width: 567px) {
+  .container {
+    width: 550px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 950px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1150px;
+  }
+}
+/* global */
+
+.title {
+  font-size: 3rem;
+  color: #007cd1;
+  text-align: center;
+  margin-block: 20px;
+}
+
+.form-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: -5px;
+  flex-wrap: wrap;
+}
+
+form input {
+  padding: 7px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 5px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.photos img {
+  object-fit: cover;
+  width: 100%;
+  height: 370px;
+}
