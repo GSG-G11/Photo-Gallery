@@ -1,14 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 header {
     display: flex;
@@ -17,15 +6,16 @@ header {
     padding: 50px;
   }
 
-.title {
-    color: blue;
-    font-size: 60px;
-    cursor: pointer;
+.welcome-title {
+    color: #333;
+    font-size: 40px;
 }
 
-.welcome-title {
-    color: rgb(255, 0, 0);
-    font-size: 40px;
+
+.section-about-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .description {
@@ -37,15 +27,123 @@ header {
     color: white;
   }
 
+  .btn-transition {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
   .transition {
     background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
   }
+/* global */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+@media (min-width: 567px) {
+  .container {
+    width: 550px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 950px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1150px;
+  }
+}
+/* global */
+
+.title {
+  font-size: 3rem;
+  color: #007cd1;
+  text-align: center;
+  margin-block: 20px;
+}
+
+.form-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: -5px;
+  flex-wrap: wrap;
+}
+
+form input {
+  padding: 7px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 5px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .welcome-title {
+    font-size: 1.8rem;
+  }
+  .section-about-us {
+    padding: 0;
+  }
+  .description {
+    padding: 100px;
+    width: 100%;
+    font-size: 40px;
+  }
+  .transition {
+      font-size: 30px;
+      width: 300px;
+      height: 100px;
+  }
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.photos img {
+  object-fit: cover;
+  width: 100%;
+  height: 370px;
+}
