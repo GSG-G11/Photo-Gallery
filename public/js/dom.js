@@ -23,6 +23,15 @@ const renderImages = (data) => {
   });
 };
 
+const checkData = (data) => {
+  const dataExists = data.data.length;
+  if (dataExists) {
+    renderImages(data.data);
+  } else {
+    throw new Error('No Data');
+  }
+};
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const input = searchTerm.value;
@@ -30,7 +39,7 @@ form.addEventListener('submit', (e) => {
 
   if (input.trim() !== '' && isNaN(input) && (+imgsNum > 0 && +imgsNum <= 20)) {
     makeRequest({ searchTerm: input, limit: imgsNum }, '/search', 'POST')
-      .then((data) => renderImages(data.data))
+      .then((checkData))
       .catch(() => invalidInput(`Sorry, we don't have ${input}`));
   } else {
     invalidInput('Search Term should be a word and images number should be in the range 1 >= image number <= 20');
