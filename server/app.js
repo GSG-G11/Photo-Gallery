@@ -1,12 +1,10 @@
 require('env2')('.env');
 const express = require('express');
-const compression = require('compression');
 const helmet = require('helmet');
 const { join } = require('path');
 const router = require('./routes');
 
 const app = express();
-app.use(compression());
 app.use(helmet());
 // To enable image src, solves 'Refused to load the image '<URL>' because it violates
 // the following Content Security Policy directive: "img-src 'self' data:"' error.

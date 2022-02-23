@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/GSG-G11/Photo-Gallery#readme",
   "dependencies": {
-    "compression": "^1.7.4",
     "env2": "^2.2.2",
     "express": "^4.17.3",
     "helmet": "^5.0.2",
