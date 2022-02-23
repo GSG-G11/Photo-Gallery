@@ -26,7 +26,7 @@
     <h1 class="title">Photo Gallery</h1>
     <p class="about">Want to know more <a href="/about">about us</a> ??</p>
     <div class="container form-cont">
-      <form action="/search" method="POST">
+      <form action="/search" method="POST" autocomplete="off">
         <input
           class="search"
           name="searchTerm"
@@ -35,8 +35,10 @@
         />
         <input
           class="limit-of-pictures-number"
+          type="number"
           name="limit"
           placeholder="Number Of Photos"
+          min="1"
           required
         />
         <button class="search-button">Search</button>
