@@ -3,9 +3,9 @@ const request = require('supertest');
 
 const app = require('../app');
 
-describe('GET Route /khaled, status 404, not exciting endpoint', () => {
+describe('Test server endpoints', () => {
   // 404
-  test('Get status 404 route', (done) => {
+  test('GET Route /khaled, status 404, not exciting endpoint', (done) => {
     request(app)
       .get('/khaled')
       .expect(404)
@@ -15,18 +15,7 @@ describe('GET Route /khaled, status 404, not exciting endpoint', () => {
         done();
       });
   });
-  // Fail /about (500)
-  test('Get Route /about, status 500, failing test', (done) => {
-    request(app)
-      .get('/about')
-      .expect(500)
-      .expect('Content-Type', /html/)
-      .end((err, res) => {
-        if (err) return done(err);
-        done();
-      });
-  });
-  // Success /about
+  // /about
   test('GET Route /about, status 200, content-type html', (done) => {
     request(app)
       .get('/about')
@@ -45,6 +34,19 @@ describe('GET Route /khaled, status 404, not exciting endpoint', () => {
       .expect('Content-Type', /html/)
       .end((err, res) => {
         if (err) return done(err);
+        done();
+      });
+  });
+  // POST
+  test('POST Route /search, status 200, content-type json', (done) => {
+    request(app)
+      .post('/search')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .send({ searchTerm: 'cat', limit: 1 })
+      .end((err, res) => {
+        if (err) return done(err);
+        expect(res.body.data.length).toBe(1);
         done();
       });
   });
