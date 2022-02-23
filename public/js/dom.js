@@ -1,41 +1,9 @@
-/* eslint-disable no-undef */
-const $ = (selector) => document.querySelector(selector);
-
-const searchTerm = $('.search');
-const limit = $('.limit-of-pictures-number');
-const photosContainer = $('.photos');
 const form = document.forms[0];
-const { body } = document;
-
-const invalidInput = (message) => {
-  const errorMsg = document.createElement('div');
-  errorMsg.className = 'invalid-input';
-  errorMsg.textContent = message;
-  body.append(errorMsg);
-};
-
-const renderImages = (data) => {
-  photosContainer.textContent = '';
-  data.forEach((image) => {
-    const img = document.createElement('img');
-    img.src = image.images.original.url;
-    photosContainer.append(img);
-  });
-};
-
-const checkData = (data) => {
-  const dataExists = data.data.length;
-  if (dataExists) {
-    renderImages(data.data);
-  } else {
-    throw new Error('No Data');
-  }
-};
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const input = searchTerm.value;
-  const imgsNum = limit.value;
+  const input = form.searchTerm.value;
+  const imgsNum = form.limit.value;
 
   if (input.trim() !== '' && isNaN(input) && (+imgsNum > 0 && +imgsNum <= 20)) {
     makeRequest({ searchTerm: input, limit: imgsNum }, '/search', 'POST')
