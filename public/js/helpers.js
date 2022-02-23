@@ -1,5 +1,12 @@
 const $ = (selector) => document.querySelector(selector);
 
+const createElement = (tagName, className = '', txtContent = '') => {
+  const element = document.createElement(tagName);
+  element.className = className;
+  element.textContent = txtContent;
+  return element;
+};
+
 const makeRequest = (data, route, httpMethod) => fetch(route, {
   method: httpMethod,
   headers: { 'Content-Type': 'application/json' },
@@ -24,10 +31,30 @@ const renderImages = (data) => {
 };
 
 const checkData = (data) => {
+  toggleLoaderDisplay();
   const dataExists = data.data.length;
   if (dataExists) {
     renderImages(data.data);
   } else {
     throw new Error('No Data');
   }
+};
+
+const createLoader = () => {
+  const loader = createElement('div', 'loader');
+  const loaderRng = createElement('div', 'lds-ring');
+  for (let i = 0; i < 4; i++) {
+    const loaderElement = createElement('div');
+    loaderRng.append(loaderElement);
+  }
+  loader.append(loaderRng);
+  $('body').append(loader);
+};
+
+const toggleLoaderDisplay = () => {
+  const body = $('body');
+  const classToShowLoader = 'show-loader';
+  body.classList.contains(classToShowLoader)
+    ? body.classList.remove(classToShowLoader)
+    : body.classList.add(classToShowLoader);
 };
