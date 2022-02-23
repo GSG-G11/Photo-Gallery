@@ -4,7 +4,7 @@
   "description": "Search For Photos of anything you want",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server/",
+    "start": "node server/index.js",
     "dev": "nodemon ./server/",
     "test": "jest --watchAll"
   },
