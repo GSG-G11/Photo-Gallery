@@ -6,6 +6,7 @@ form.addEventListener('submit', (e) => {
   const imgsNum = form.limit.value;
 
   if (input.trim() !== '' && isNaN(input) && (+imgsNum > 0 && +imgsNum <= 20)) {
+    toggleLoaderDisplay();
     makeRequest({ searchTerm: input, limit: imgsNum }, '/search', 'POST')
       .then((checkData))
       .catch(() => invalidInput(`Sorry, we don't have ${input}`));
@@ -19,3 +20,5 @@ document.addEventListener('click', (e) => {
     $('.invalid-input').remove();
   }
 });
+
+createLoader();
