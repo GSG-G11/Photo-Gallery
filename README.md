@@ -64,15 +64,18 @@
 
 - Home Page
 
-![](https://i.imgur.com/8Q2XUoQ.png)
+![](https://i.imgur.com/auD6kBA.jpg)
+
 
 - Loading Screen
 
-![](https://i.imgur.com/y2wCM9r.png)
+![](https://i.imgur.com/NmPboEm.png)
+
 
 - Validation Data
 
 ![](https://i.imgur.com/grEB0bH.png)
+
 
 - Not Found Data
 
@@ -80,7 +83,7 @@
 
 - About Page
 
-![](https://i.imgur.com/w81KdJG.png)
+![](https://i.imgur.com/o0atVcR.png)
 
 ## Technologies Used <span id="technologies-used"></span> :computer:
 
