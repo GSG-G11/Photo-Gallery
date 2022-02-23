@@ -12,7 +12,7 @@ describe('Test server endpoints', () => {
       .expect('Content-Type', /html/)
       .end((err, res) => {
         if (err) return done(err);
-        done();
+        return done();
       });
   });
   // /about
@@ -23,7 +23,7 @@ describe('Test server endpoints', () => {
       .expect('Content-Type', /html/)
       .end((err, res) => {
         if (err) return done(err);
-        done();
+        return done();
       });
   });
   // Success root endpoint
@@ -47,7 +47,7 @@ describe('Test server endpoints', () => {
       .end((err, res) => {
         if (err) return done(err);
         expect(res.body.data.length).toBe(1);
-        done();
+        return done();
       });
   });
 });
