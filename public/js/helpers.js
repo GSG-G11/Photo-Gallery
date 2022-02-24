@@ -25,7 +25,7 @@ const renderImages = (data) => {
   photosContainer.textContent = '';
   data.forEach((image) => {
     const img = document.createElement('img');
-    img.src = image.images.original.url;
+    img.src = image.images.downsized.url;
     photosContainer.append(img);
   });
 };
