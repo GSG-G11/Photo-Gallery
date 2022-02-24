@@ -21,11 +21,11 @@
 
 ## Problem <span id="problem"></span> :interrobang:
 
-- Lack of websites that provide the ability for the user to search for any photo they whould like, with controllers like photos limit number.
+- Many people especially entertainment content owners, who are spreading their posts to the public, are suffering from searching the helper models for their content, especially the gifs websites because there aren't many websites that are Specialized in displaying gifs, even if they find these websites, the loading is very long.
 
 ## Solution <span id="solution"></span> :100:
 
-- Build a website that helps users to search for any photo for anything they whould like to see _`Photo-Gallery`_.
+- So we decided to create a website that provides the ability to users to search for gifs in any field, with ability to limit the numbers of these gifs for making the loading of the website shorter.
 
 ## Features <span id="features"></span> :bookmark_tabs:
 
