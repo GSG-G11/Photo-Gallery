@@ -8,7 +8,7 @@ const {
 } = require('../controllers');
 
 router.get('/about', handleAboutPage);
-router.post('/search', handleSearch);
+router.get('/search', handleSearch);
 router.use(pageNotFound);
 router.use(serverError);
 
