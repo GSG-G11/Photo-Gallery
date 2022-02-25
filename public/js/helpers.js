@@ -7,11 +7,7 @@ const createElement = (tagName, className = '', txtContent = '') => {
   return element;
 };
 
-const makeRequest = (data, route, httpMethod) => fetch(route, {
-  method: httpMethod,
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(data),
-}).then((res) => res.json());
+const makeRequest = (url) => fetch(url).then((res) => res.json());
 
 const invalidInput = (message) => {
   const errorMsg = document.createElement('div');
@@ -30,14 +26,28 @@ const renderImages = (data) => {
   });
 };
 
+const copyToClipboard = (text) => {
+  const elem = document.createElement('textarea');
+  elem.value = text;
+  document.body.appendChild(elem);
+  elem.select();
+  document.execCommand('copy');
+  document.body.removeChild(elem);
+};
+
 const checkData = (data) => {
-  toggleLoaderDisplay();
+  toggleLoader();
   const dataExists = data.data.length;
   if (dataExists) {
     renderImages(data.data);
   } else {
     throw new Error('No Data');
   }
+  document.querySelectorAll('img').forEach((img) => {
+    img.onclick = (e) => {
+      copyToClipboard(e.target.src);
+    };
+  });
 };
 
 const createLoader = () => {
@@ -51,10 +61,6 @@ const createLoader = () => {
   $('body').append(loader);
 };
 
-const toggleLoaderDisplay = () => {
-  const body = $('body');
-  const classToShowLoader = 'show-loader';
-  body.classList.contains(classToShowLoader)
-    ? body.classList.remove(classToShowLoader)
-    : body.classList.add(classToShowLoader);
+const toggleLoader = () => {
+  $('body').classList.toggle('show-loader');
 };
